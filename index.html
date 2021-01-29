@@ -7,13 +7,17 @@
         body{ 
             width:600px;
               margin:0 auto;
+              background:black;
               }
         h1{ 
             text-align:center;
+            color: white;
+            font-family: verdana;
             } 
         #miCanvas{ 
             border:dotted 2px yellow;
-            background:black;
+            background:white;
+            
             }
     </style>
     <script>
@@ -131,7 +135,7 @@ ctx.restore();
 }
 function mensaje(cadena) {
     var lon = (canvas.width-(53*cadena.length))/2;
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "#1F76B5";
     ctx.clearRect(0,0,canvas.width, canvas.height);
     ctx.font = "bold 50px Rosewood Std";
     ctx.fillText(cadena,lon,220);
@@ -176,7 +180,7 @@ function gameOver() {
     balasEnemigas_array = [];
     clearTimeout(de);
     finJuego = true;
-    mensaje("GAME OVER");
+    mensaje("Game Over");
     fin.play();
   }
   
@@ -261,8 +265,8 @@ window.onload = function() {
                     x = canvas.width/2;
                     imagen = new Image();
                     imagenEnemigo = new Image();
-                    imagenEnemigo.src = "imagenes/invader.fw.png";
-                    imagen.src = "imagenes/torre.fw.png";
+                    imagenEnemigo.src = "imagenes/invader.jpg";
+                    imagen.src = "imagenes/avion.jpg";
                     mensaje("INVASORES");
                     intro.play();
                     imagen.onload = function() {
@@ -286,7 +290,7 @@ de = setTimeout(disparaEnemigo,3500);
     </script>
 </head>
 <body>
-    <h1> CANVAS Invaders OMJV</h1>
+    <h1> Mi Primer Juego Canvas</h1>
         <canvas id="miCanvas" width="600px" height="500px">
             Tu navegador no soporta CANVAS
         </canvas>
